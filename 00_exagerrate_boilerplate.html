@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Set up some debugging once we start processing the HTML-->
+<script>
+    clearConsole();
+    console.group("HTML Section");
+    startTimer("pageload-html");
+
+    class DebugInfo {
+        constructor() {
+            this.htmlTime = 0;
+            this.headTime = 0;
+            this.headerTime = 0;
+            this.navTime = 0;
+            this.mainTime = 0;
+            this.secOneTime = 0;
+            this.secTwoTime = 0;
+            this.secThreeTime = 0;
+            this.secFourTime = 0;
+            this.secFiveTime = 0;
+            this.bodyTime = 0;
+            this.footerTime = 0;
+        }
+    }
+
+    let debugInfo = new DebugInfo();
+
+
+    function clearConsole() {
+        console.clear();
+    }
+
+    function startTimer(group) {
+        return console.time(group);
+    }
+
+    function endTimer(group) {
+        return console.timeEnd(group);
+    }                 
+</script>
+
+<head>
+    <script>
+        console.group("HEAD SECTION");
+        startTimer("pageload-head");
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="HTML,CSS,Widget">
+    <meta name="description" content="HTML/CSS Widget">
+    <meta name="author" content="Andasan">
+    <meta name="generator" content="Visual Studio Code">
+    <meta name="application-name" content="Personal Website">
+    <title>HTML/CSS Widget</title>
+    <base href="" target="_self">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <noscript>JavaScript is not supported or is disabled in browser!</noscript>
+    <script>
+        console.log("JavaScript is supported!");
+
+        debugInfo.headTime = endTimer("pageload-head");
+        console.groupEnd("HEAD Section");
+    </script>
+    
+</head>
+
+<body onload="onPageLoad()" onunload="onPageUnLoad()" onpagehide="onPageHide()" onpageshow="onPageShow()"
+    onfocus="onPageFocus()" onblur="onPageBlur()" oncopy="onCopyEvent()" oncut="onCutEvent()" onpaste="onPasteEvent()"
+    onkeypress="onKeyPressEvent()" onkeydown="onKeyDownEvent()" onkeyup="onKeyUpEvent()">
+
+    <script>
+        console.group("BODY Section");
+        startTimer("pageload-body");
+    </script>
+
+    <header id="header">
+        <script>
+            console.group("HEADER Section");
+            startTimer("pageload-header");
+        </script>
+
+        <div class="inner">
+            <a href="#" class="image avatar"><img src="assets/images/avatar.jpg" alt="" /></a>
+            <h1>HTML/CSS Widget</h1>
+        </div>
+
+        <script>
+            debugInfo.headerTime = endTimer("pageload-header");
+            console.groupEnd("HEADER Section");
+        </script>
+    </header>
+
+    <nav>
+        <script>
+            console.group("NAV Section");
+            startTimer("pageload-nav");
+        </script>
+
+        <script>
+            debugInfo.navTime = endTimer("pageload-nav");
+            console.groupEnd("NAV Section");
+        </script>
+    </nav>
+
+    <main>
+        <script>
+            console.group("MAIN Section");
+            startTimer("pageload-main");
+        </script>
+
+
+
+        <section id="one">
+            <script>
+                console.group("SECTION-ONE Section");
+                startTimer("pageload-secOne");
+            </script>
+
+            <h2 class="section--title">Buttons</h2>
+
+            <a href="#" class="button">Default</a>
+            <a href="#" class="button normal">Normal</a>
+            <a href="#" class="button primary">Primary</a>
+            <a href="#" class="button success"><span class="icon icon-success"></span>Success</a>
+            <a href="#" class="button danger"><span class="icon icon-danger"></span>Danger</a>
+            <a href="#" class="button warning"><span class="icon icon-warning"></span>Warning</a>
+            <a href="#" class="button info"><span class="icon icon-info"></span>Info</a>
+            <a href="#" class="button dark">Dark</a>
+
+            <script>
+                debugInfo.secOneTime = endTimer("pageload-secOne");
+                console.groupEnd("SECTION-ONE Section");
+            </script>
+        </section>
+        <hr>
+        <section id="two">
+            <script>
+                console.group("SECTION-TWO Section");
+                startTimer("pageload-secTwo");
+            </script>
+
+            <h2 class="section--title">Paragraph</h2>
+            <p class="default">
+                Default: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos ab eaque expedita tempore
+                quae eum at quam placeat? Illum eum assumenda voluptate vero vel recusandae veritatis quod repellat!
+                Eveniet, inventore!
+            </p>
+            <p class="normal">
+                Normal: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos ab eaque expedita tempore
+                quae eum at quam placeat? Illum eum assumenda voluptate vero vel recusandae veritatis quod repellat!
+                Eveniet, inventore!
+            </p>
+            <p class="primary">
+                Primary: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos ab eaque expedita tempore
+                quae eum at quam placeat? Illum eum assumenda voluptate vero vel recusandae veritatis quod repellat!
+                Eveniet, inventore!
+            </p>
+            <p class="success">
+                <span class="para icon icon-success">
+                Success: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos ab eaque expedita tempore
+                quae eum at quam placeat? Illum eum assumenda voluptate vero vel recusandae veritatis quod repellat!
+                Eveniet, inventore!
+            </p>
+            <p class="danger">
+                    <span class="para icon icon-danger">
+                Danger: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos ab eaque expedita tempore
+                quae eum at quam placeat? Illum eum assumenda voluptate vero vel recusandae veritatis quod repellat!
+                Eveniet, inventore!
+            </p>
+            <p class="warning">
+                    <span class="para icon icon-warning">
+                Warning: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos ab eaque expedita tempore
+                quae eum at quam placeat? Illum eum assumenda voluptate vero vel recusandae veritatis quod repellat!
+                Eveniet, inventore!
+            </p>
+            <p class="info">
+                    <span class="para icon icon-info">
+                Info: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos ab eaque expedita tempore
+                quae eum at quam placeat? Illum eum assumenda voluptate vero vel recusandae veritatis quod repellat!
+                Eveniet, inventore!
+            </p>
+            <p class="dark">
+                Dark: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos ab eaque expedita tempore
+                quae eum at quam placeat? Illum eum assumenda voluptate vero vel recusandae veritatis quod repellat!
+                Eveniet, inventore!
+            </p>
+
+            <script>
+                debugInfo.secTwoTime = endTimer("pageload-secTwo");
+                console.groupEnd("SECTION-TWO Section");
+            </script>
+        </section>
+        <hr>
+        <section id="three">
+            <script>
+                console.group("SECTION-THREE Section");
+                startTimer("pageload-secThree");
+            </script>
+
+            <h2 class="section--title">Header</h2>
+            <header class="default">
+                Default
+            </header>
+            <header class="normal">
+                Normal
+            </header>
+            <header class="primary">
+                Primary
+            </header>
+            <header class="success">
+                Success
+            </header>
+            <header class="danger">
+                Danger
+            </header>
+            <header class="warning">
+                Warning
+            </header>
+            <header class="info">
+                Info
+            </header>
+            <header class="dark">
+                Dark
+            </header>
+
+            <script>
+                debugInfo.secThreeTime = endTimer("pageload-secThree");
+                console.groupEnd("SECTION-THREE Section");
+            </script>
+        </section>
+        <hr>
+        <section id="four">
+            <script>
+                console.group("SECTION-FOUR Section");
+                startTimer("pageload-secFour");
+            </script>
+
+            <h2 class="section--title">Input</h2>
+            <input class="lg" type="text" placeholder="default">
+            <input class="normal lg" type="text" placeholder="normal">
+            <input class="primary lg" type="text" placeholder="primary">
+            <input class="success lg" type="text" placeholder="success">
+            <input class="danger lg" type="text" placeholder="danger">
+            <input class="warning lg" type="text" placeholder="warning">
+            <input class="info lg" type="text" placeholder="info">
+            <input class="dark lg" type="text" placeholder="dark">
+            <form action="">
+                <input class="lg" type="email" placeholder="Enter email">
+                <input class="lg" type="password" placeholder="Password">
+                <button type="submit" class="button primary">Submit</button>
+            </form>
+
+            <script>
+                debugInfo.secFourTime = endTimer("pageload-secFour");
+                console.groupEnd("SECTION-FOUR Section");
+            </script>
+        </section>
+        <hr>
+        <section id="five">
+            <script>
+                console.group("SECTION-FIVE Section");
+                startTimer("pageload-secFive");
+            </script>
+
+            <h2 class="section--title">List (Ordered)</h2>
+            <ol class="list-group">
+                <li>A simple default list group item</li>
+                <li class="normal">A simple normal list group item</li>
+                <li class="primary">A simple primary list group item</li>
+                <li class="secondary">A simple secondary list group item</li>
+                <li class="uccess">A simple success list group item</li>
+                <li class="danger">A simple danger list group item</li>
+                <li class="warning">A simple warning list group item</li>
+                <li class="info">A simple info list group item</li>
+                <li class="dark">A simple dark list group item</li>
+                <li class="normal">Password</li>
+                <li class="normal">Email</li>
+            </ol>
+
+            <h2 class="section--title">List (Unordered)</h2>
+            <ul class="list-group">
+                <li>A simple default list group item</li>
+                <li class="normal">A simple normal list group item</li>
+                <li class="primary">A simple primary list group item</li>
+                <li class="secondary">A simple secondary list group item</li>
+                <li class="uccess">A simple success list group item</li>
+                <li class="danger">A simple danger list group item</li>
+                <li class="warning">A simple warning list group item</li>
+                <li class="info">A simple info list group item</li>
+                <li class="dark">A simple dark list group item</li>
+                <li class="normal">Password</li>
+                <li class="normal">Email</li>
+            </ul>
+
+            <script>
+                debugInfo.secFiveTime = endTimer("pageload-secFive");
+                console.groupEnd("SECTION-FIVE Section");
+            </script>
+        </section>
+
+        <script>
+            debugInfo.mainTime = endTimer("pageload-main");
+            console.groupEnd("MAIN Section");
+        </script>
+    </main>
+
+    <footer id="footer">
+        <script>
+            console.group("FOOTER SECTION");
+            startTimer("pageload-footer");
+
+            function onContextMenuEvent() {
+                console.log("onContextMenuEvent")
+            }
+
+            function onKeyDownEvent() {
+                console.log("onKeyDownEvent")
+            }
+            function onKeyUpEvent() {
+                console.log("onKeyUpEvent")
+            }
+
+            function onKeyPressEvent() {
+                console.log("onKeyPressEvent")
+            }
+
+            function onCopyEvent() {
+                console.log("copy")
+            }
+
+            function onPasteEvent() {
+                console.log("paste")
+            }
+
+            function onCutEvent() {
+                console.log("cut")
+            }
+
+            function onPageLoad() {
+                console.log("Page is loaded");
+            }
+
+            function onPageUnLoad() {
+                console.log("Page is Un-loaded");
+            }
+
+            function onPageShow() {
+                console.log("Page is Showing")
+            }
+
+            function onPageHide() {
+                console.log("Page is hiding")
+            }
+
+            function onPageFocus() {
+                console.log("Page has Focus")
+            }
+
+            function onPageBlur() {
+                console.log("Page lost focus")
+            }
+
+            function onBeforePageFocus() {
+                console.log("Page is about to gain focus")
+            }
+            function onBeforePageBlur() {
+                console.log("Page about to lose focus")
+            }
+        </script>
+
+        <div class="inner">
+            © Andasan 2019
+        </div>
+
+        <script>
+            debugInfo.footerTime = endTimer("pageload-footer");
+            console.groupEnd("FOOTER Section");
+        </script>
+    </footer>
+    <script>
+        debugInfo.bodyTime = endTimer("pageload-body");
+        console.groupEnd("BODY Section");
+    </script>
+</body>
+
+<script>
+    debugInfo.htmlTime = endTimer("pageload-html");
+    console.groupEnd("HTML Section");
+
+    console.group("Debug Information");
+    console.group("Page Information");
+    console.log("Page Loaded: " + location.href + " with parms: " + location.search);
+    console.log("Language: " + navigator.language);
+    console.log("Cookies Enabled: " + navigator.cookieEnabled);
+    console.log("Platform: " + navigator.platform + "(" + navigator.product + ")");
+    console.log(navigator.appCodeName + "(" + navigator.appName + ") " + navigator.appVersion);
+    console.log("UserAgent: " + navigator.userAgent);
+    console.log("JavaEnabled: " + navigator.javaEnabled());
+    console.log("Is Online: " + navigator.onLine);
+    console.groupEnd("Page Information");
+
+    console.group("DOM Information");
+    console.group("DOM - Window Object");
+    console.log(window);
+    console.groupEnd("DOM - Window object");
+
+    console.group("DOM - Document Object");
+    console.log(document);
+    console.groupEnd("DOM - Document Object");
+
+    console.group("DOM - Navigator");
+    console.log(navigator);
+    console.groupEnd("DOM - Navigator");
+    console.groupEnd("DOM Information");
+
+    console.groupEnd("DebugInformation");
+
+</script>
+
+</html>
